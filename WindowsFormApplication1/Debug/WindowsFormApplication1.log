@@ -1,18 +1,12 @@
-﻿Build started 2015-05-29 23:32:35.
+﻿Build started 2015-05-30 01:02:37.
      1>Project "C:\Users\Jan\Documents\Visual Studio 2013\Projects\CANNON GAME\WindowsFormApplication1\WindowsFormApplication1.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          E:\programowanie\visual\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\\" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\\" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\WindowsFormApplication1.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.dll" /analyze- /errorReport:prompt /clr:nostdlib WindowsFormApplication1.cpp
          WindowsFormApplication1.cpp
-     1>c:\users\jan\documents\visual studio 2013\projects\cannon game\windowsformapplication1\Cannon.h(19): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\jan\documents\visual studio 2013\projects\cannon game\windowsformapplication1\Cannon.h(23): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\jan\documents\visual studio 2013\projects\cannon game\windowsformapplication1\Cannon.h(28): warning C4244: '+=' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\jan\documents\visual studio 2013\projects\cannon game\windowsformapplication1\Cannon.h(32): warning C4244: '+=' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\jan\documents\visual studio 2013\projects\cannon game\windowsformapplication1\Cannon.h(37): warning C4244: 'return' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\jan\documents\visual studio 2013\projects\cannon game\windowsformapplication1\Cannon.h(41): warning C4244: 'return' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\jan\documents\visual studio 2013\projects\cannon game\windowsformapplication1\Cannon.h(46): warning C4244: 'return' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\jan\documents\visual studio 2013\projects\cannon game\windowsformapplication1\Cannon.h(50): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\jan\documents\visual studio 2013\projects\cannon game\windowsformapplication1\Cannon.h(54): warning C4244: 'return' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\jan\documents\visual studio 2013\projects\cannon game\windowsformapplication1\Cannon.h(58): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\jan\documents\visual studio 2013\projects\cannon game\windowsformapplication1\Player.h(28): warning C4244: 'return' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\jan\documents\visual studio 2013\projects\cannon game\windowsformapplication1\Player.h(32): warning C4244: 'return' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\jan\documents\visual studio 2013\projects\cannon game\windowsformapplication1\Player.h(37): warning C4244: 'return' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\jan\documents\visual studio 2013\projects\cannon game\windowsformapplication1\Player.h(41): warning C4244: 'return' : conversion from 'int' to 'float', possible loss of data
        Link:
          E:\programowanie\visual\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Jan\Documents\Visual Studio 2013\Projects\CANNON GAME\Debug\WindowsFormApplication1.exe" /INCREMENTAL /NOLOGO /ASSEMBLYRESOURCE:Debug\WindowsFormApplication1.Form1.resources /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Jan\Documents\Visual Studio 2013\Projects\CANNON GAME\Debug\WindowsFormApplication1.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\app.res
          Debug\AssemblyInfo.obj
@@ -24,4 +18,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:03.09
+Time Elapsed 00:00:01.76

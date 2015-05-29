@@ -8,7 +8,7 @@ namespace WindowsFormApplication1 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-    #include "Cannon.h"
+    #include "Player.h"
 
 	/// <summary>
 	/// Summary for Form1
@@ -38,8 +38,7 @@ namespace WindowsFormApplication1 {
 		}
 
 	protected:
-
-	private: Cannon cannon;
+	private: Player^ player;
 	private: Form^ GameWindow;
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::Label^  label2;
@@ -112,6 +111,7 @@ namespace WindowsFormApplication1 {
 			this->button2->TabIndex = 1;
 			this->button2->Text = L"->";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &Form1::button2_Click);
 			// 
 			// label3
 			// 
@@ -161,25 +161,23 @@ namespace WindowsFormApplication1 {
 			Rectangle screen = System::Windows::Forms::Screen::GetBounds(GameWindow);
 			GameWindow->Top = screen.Height / 2 - 250;
 			GameWindow->Left = screen.Width / 2 - 250;
-			GameWindow->Width = 516;
-			GameWindow->Height = 540;
-			//GameWindow->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			GameWindow->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"back2")));
+			GameWindow->Width = 800;
+			GameWindow->Height = 600;
+			//GameWindow->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"back2")));
 			GameWindow->Show();
 
-
-		
-		
-		
-		
-		
-		
+			player = gcnew Player(GameWindow->Width, GameWindow->Height, resources);
+			GameWindow->Controls->Add(player->getPic());
+	
 		}
 #pragma endregion
 
 	
-
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+	player->x(-50);
+}
+private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
+	player->x(50);
 }
 };
 }

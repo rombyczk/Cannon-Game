@@ -14,19 +14,17 @@ Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=
 	hash=None, flags=None
 Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
-Class WindowsFormApplication1.Cannon: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+Class WindowsFormApplication1.Player: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32, Int32, System.ComponentModel.ComponentResourceManager): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
-    setX(Single): PrivateScope, Public, HideBySig
-    setY(Single): PrivateScope, Public, HideBySig
+    setX(Int32): PrivateScope, Public, HideBySig
     x(): PrivateScope, Public, HideBySig
-    x(Single): PrivateScope, Public, HideBySig
+    x(Int32): PrivateScope, Public, HideBySig
     y(): PrivateScope, Public, HideBySig
-    y(Single): PrivateScope, Public, HideBySig
-    sizeX(Single): PrivateScope, Public, HideBySig
     sizeX(): PrivateScope, Public, HideBySig
-    sizeY(Single): PrivateScope, Public, HideBySig
     sizeY(): PrivateScope, Public, HideBySig
+    getPic(): PrivateScope, Public, HideBySig
 Class WindowsFormApplication1.Form1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
