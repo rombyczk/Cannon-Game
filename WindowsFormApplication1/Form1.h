@@ -40,6 +40,7 @@ namespace WindowsFormApplication1 {
 	protected:
 
 	private: Cannon cannon;
+	private: Form^ GameWindow;
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::Button^  button1;
@@ -77,7 +78,6 @@ namespace WindowsFormApplication1 {
 			this->label1->Size = System::Drawing::Size(113, 31);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Points :";
-			this->label1->Click += gcnew System::EventHandler(this, &Form1::label1_Click);
 			// 
 			// label2
 			// 
@@ -100,6 +100,7 @@ namespace WindowsFormApplication1 {
 			this->button1->TabIndex = 1;
 			this->button1->Text = L"<-";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &Form1::button1_Click);
 			// 
 			// button2
 			// 
@@ -123,7 +124,6 @@ namespace WindowsFormApplication1 {
 			this->label3->TabIndex = 0;
 			this->label3->Text = L"0";
 			this->label3->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
-			this->label3->Click += gcnew System::EventHandler(this, &Form1::label1_Click);
 			// 
 			// label4
 			// 
@@ -155,11 +155,31 @@ namespace WindowsFormApplication1 {
 
 		}
 		void Game_Inits()
-		{}
+		{
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(Form1::typeid));
+			GameWindow = gcnew Form;
+			Rectangle screen = System::Windows::Forms::Screen::GetBounds(GameWindow);
+			GameWindow->Top = screen.Height / 2 - 250;
+			GameWindow->Left = screen.Width / 2 - 250;
+			GameWindow->Width = 516;
+			GameWindow->Height = 540;
+			//GameWindow->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			GameWindow->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"back2")));
+			GameWindow->Show();
+
+
+		
+		
+		
+		
+		
+		
+		}
 #pragma endregion
 
 	
-private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
+
+private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 };
 }
