@@ -9,6 +9,7 @@ namespace WindowsFormApplication1 {
 	using namespace System::Data;
 	using namespace System::Drawing;
     #include "Player.h"
+	#include"Block.h"
 
 	/// <summary>
 	/// Summary for Form1
@@ -40,6 +41,7 @@ namespace WindowsFormApplication1 {
 	protected:
 	private: Player^ player;
 	private: Form^ GameWindow;
+	private:Timer^ timer;
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::Button^  button1;
@@ -163,21 +165,34 @@ namespace WindowsFormApplication1 {
 			GameWindow->Left = screen.Width / 2 - 250;
 			GameWindow->Width = 800;
 			GameWindow->Height = 600;
-			//GameWindow->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"back2")));
+			GameWindow->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"lama")));
 			GameWindow->Show();
 
 			player = gcnew Player(GameWindow->Width, GameWindow->Height, resources);
 			GameWindow->Controls->Add(player->getPic());
+
+			timer = gcnew Timer();
+			timer->Interval = 0.1;
+			timer->Tick += gcnew EventHandler(this, &timer_tick);
+			timer->Start();
 	
 		}
 #pragma endregion
 
 	
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+	if (player->x()-50>0)
 	player->x(-50);
 }
 private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
+	if (player->x() + 50+player->sizeX()<GameWindow->Width)
 	player->x(50);
+}
+private: System::Void timer_tick(Object^ sender, EventArgs^ e)
+{
+	
+
+
 }
 };
 }

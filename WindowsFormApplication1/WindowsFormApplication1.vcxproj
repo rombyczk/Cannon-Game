@@ -96,6 +96,7 @@
     <ClCompile Include="WindowsFormApplication1.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Block.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Form1.h">
       <FileType>CppForm</FileType>

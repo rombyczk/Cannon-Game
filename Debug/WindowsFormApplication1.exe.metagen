@@ -25,6 +25,17 @@ Class WindowsFormApplication1.Player: AutoLayout, AnsiClass, Class, Public, Befo
     sizeX(): PrivateScope, Public, HideBySig
     sizeY(): PrivateScope, Public, HideBySig
     getPic(): PrivateScope, Public, HideBySig
+Class WindowsFormApplication1.Block: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32, Int32, System.ComponentModel.ComponentResourceManager): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    setY(Int32): PrivateScope, Public, HideBySig
+    y(): PrivateScope, Public, HideBySig
+    y(Int32): PrivateScope, Public, HideBySig
+    x(): PrivateScope, Public, HideBySig
+    sizeX(): PrivateScope, Public, HideBySig
+    sizeY(): PrivateScope, Public, HideBySig
+    getPic(): PrivateScope, Public, HideBySig
 Class WindowsFormApplication1.Form1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
