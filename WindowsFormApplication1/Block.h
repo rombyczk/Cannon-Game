@@ -11,8 +11,8 @@ public:
 		mPic = gcnew PictureBox();
 		mPic->Width = 50;
 		mPic->Height = 50;
-		mPic->Location = Point(rand->Next()%w, 0);
-		mPic->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"lama")));
+		mPic->Location = Point(rand->Next()%w-20, 0);
+		mPic->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"klocek")));
 	}
 
 	void setY(int val)

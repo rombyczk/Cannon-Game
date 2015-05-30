@@ -197,7 +197,7 @@ namespace WindowsFormApplication1 {
 
 	
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-	if (player->x()-50>0)
+	if (player->x()-50>=0)
 	player->x(-50);
 }
 private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {

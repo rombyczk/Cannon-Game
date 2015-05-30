@@ -13,7 +13,7 @@ public:
 		points = 0;
 		lifes = 5;
 		mPic->Location = Point(w / 2 - mPic->Width / 2, h - mPic->Height-50);
-		mPic->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"lama")));
+		mPic->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Gracz")));
 	}
 
 	void setX(int val)

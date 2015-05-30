@@ -114,6 +114,8 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="img\Gracz.jpg" />
+    <Image Include="img\klocek.jpg" />
     <Image Include="img\lama.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

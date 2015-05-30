@@ -1,4 +1,4 @@
 do zrobienia:
--sprawic by znikaly jak dojda do konca okna
--odejmowac zycie gracza, dodawac punkty
--zrobi\c grafiki odpowiedniej wielkosci
+-zrobic grafiki odpowiedniej wielkosci
+-menu
+-opcje
