@@ -1,5 +1,6 @@
 #pragma once
 #include"Form1.h"
+#include"Options.h"
 namespace WindowsFormApplication1 {
 
 	using namespace System;
@@ -98,6 +99,7 @@ namespace WindowsFormApplication1 {
 			this->button2->Tag = L"";
 			this->button2->Text = L"Opcje";
 			this->button2->UseVisualStyleBackColor = false;
+			this->button2->Click += gcnew System::EventHandler(this, &Main_Menu::button2_Click);
 			// 
 			// button3
 			// 
@@ -138,6 +140,12 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 	this->Hide();
 	Form1^ f2 = gcnew Form1();
 	f2->ShowDialog();
+}
+private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) 
+{
+	this->Hide();
+	Options^ f3 = gcnew Options();
+	f3->ShowDialog();
 }
 };
 }

@@ -52,6 +52,7 @@ namespace WindowsFormApplication1 {
 	private: System::Windows::Forms::Label^  score;
 
 	private: System::Windows::Forms::Label^  label4;
+	private: System::Windows::Forms::Button^  button3;
 	private:
 		/// <summary>
 		/// Required designer variable.
@@ -71,6 +72,7 @@ namespace WindowsFormApplication1 {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->score = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -143,11 +145,25 @@ namespace WindowsFormApplication1 {
 			this->label4->Text = L"5";
 			this->label4->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			// 
+			// button3
+			// 
+			this->button3->BackColor = System::Drawing::Color::Red;
+			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->button3->Location = System::Drawing::Point(47, 241);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(249, 49);
+			this->button3->TabIndex = 2;
+			this->button3->Text = L"Wy³¹cz Gre";
+			this->button3->UseVisualStyleBackColor = false;
+			this->button3->Click += gcnew System::EventHandler(this, &Form1::button3_Click);
+			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(368, 237);
+			this->ClientSize = System::Drawing::Size(368, 292);
+			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label4);
@@ -257,18 +273,24 @@ private:System::Void checkwin()
 	if (player->pts() >= 50)
 	{
 		timer->Stop();
+		block_timer->Stop();
 		MessageBox::Show("Wygrana", "Super");
-		Close();
+		Application::Exit();
 
 	}
 	if (player->lfs() <= 0)
 	{
 		timer->Stop();
+		block_timer->Stop();
 		MessageBox::Show("Przegrana", "Koniec");
-		Close();
+		Application::Exit();
 
 	}
 }
 #pragma endregion
+private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) 
+{
+	Application::Exit();
+}
 };
 }

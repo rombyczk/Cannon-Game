@@ -1,5 +1,6 @@
   WindowsFormApplication1.Form1.resources - Embedded, ContainedInManifestFile, 
   WindowsFormApplication1.Main_Menu.resources - Embedded, ContainedInManifestFile, 
+  WindowsFormApplication1.Options.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
 Assembly WindowsFormApplication1, Version=1.0.*, Culture=Invariant Language (Invariant Country): 
 	hash=SHA1, flags=PublicKey
@@ -42,6 +43,9 @@ Class WindowsFormApplication1.Block: AutoLayout, AnsiClass, Class, Public, Befor
     sizeY(): PrivateScope, Public, HideBySig
     getPic(): PrivateScope, Public, HideBySig
 Class WindowsFormApplication1.Form1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class WindowsFormApplication1.Options: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class WindowsFormApplication1.Main_Menu: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit

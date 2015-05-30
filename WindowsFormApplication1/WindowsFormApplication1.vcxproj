@@ -90,6 +90,7 @@
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="Main_Menu.cpp" />
+    <ClCompile Include="Options.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -99,6 +100,9 @@
   <ItemGroup>
     <ClInclude Include="Block.h" />
     <ClInclude Include="Main_Menu.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Options.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Player.h" />
@@ -118,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main_Menu.resx">
       <DependentUpon>Main_Menu.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options.resx">
+      <DependentUpon>Options.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
