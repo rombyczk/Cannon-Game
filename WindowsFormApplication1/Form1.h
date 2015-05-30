@@ -1,13 +1,14 @@
 #pragma once
 
 namespace WindowsFormApplication1 {
-
+	
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Collections::Generic;
     #include "Player.h"
 	#include"Block.h"
 
@@ -41,7 +42,9 @@ namespace WindowsFormApplication1 {
 	protected:
 	private: Player^ player;
 	private: Form^ GameWindow;
-	private:Timer^ timer;
+	private: Timer^ timer;
+	private: Timer^ block_timer;
+	private: List< Block^> block;
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::Button^  button1;
@@ -171,13 +174,25 @@ namespace WindowsFormApplication1 {
 			player = gcnew Player(GameWindow->Width, GameWindow->Height, resources);
 			GameWindow->Controls->Add(player->getPic());
 
+			
+
 			timer = gcnew Timer();
-			timer->Interval = 0.1;
-			timer->Tick += gcnew EventHandler(this, &timer_tick);
+			timer->Interval = 10;
+			timer->Tick += gcnew EventHandler(this, &Form1::timer_tick);
 			timer->Start();
+
+
+
+			block_timer = gcnew Timer();
+			block_timer->Interval = 4000;
+			block_timer->Tick += gcnew EventHandler(this, &Form1::block_creator);
+			block_timer->Start();
+
+
+
 	
 		}
-#pragma endregion
+
 
 	
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -190,10 +205,18 @@ private: System::Void button2_Click(System::Object^  sender, System::EventArgs^ 
 }
 private: System::Void timer_tick(Object^ sender, EventArgs^ e)
 {
-	
-
-
+	for (int i = 0; i < block.Count; i++)
+	{
+		block[i]->y(5);
+	}
 }
+private:System::Void block_creator(Object^ sender, EventArgs^ e)
+{
+	System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(Form1::typeid));
+	block.Add(gcnew Block(GameWindow->Width, GameWindow->Height, resources));
+	GameWindow->Controls->Add(block[block.Count-1]->getPic());
+}
+
+#pragma endregion
 };
 }
-

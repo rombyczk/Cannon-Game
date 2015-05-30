@@ -7,10 +7,11 @@ public:
 	Block(){}
 	Block(int w, int h, System::ComponentModel::ComponentResourceManager^ resources)
 	{
+		Random^ rand = gcnew Random();
 		mPic = gcnew PictureBox();
 		mPic->Width = 50;
 		mPic->Height = 50;
-		//mPic->Location = Point(w / 2 - mPic->Width / 2, h - mPic->Height - 50);
+		mPic->Location = Point(rand->Next()%w, 0);
 		mPic->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"lama")));
 	}
 
