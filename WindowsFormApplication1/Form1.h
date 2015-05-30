@@ -49,7 +49,8 @@ namespace WindowsFormApplication1 {
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::Button^  button1;
 	private: System::Windows::Forms::Button^  button2;
-	private: System::Windows::Forms::Label^  label3;
+	private: System::Windows::Forms::Label^  score;
+
 	private: System::Windows::Forms::Label^  label4;
 	private:
 		/// <summary>
@@ -68,7 +69,7 @@ namespace WindowsFormApplication1 {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->score = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
@@ -118,17 +119,17 @@ namespace WindowsFormApplication1 {
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &Form1::button2_Click);
 			// 
-			// label3
+			// score
 			// 
-			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->score->AutoSize = true;
+			this->score->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->label3->Location = System::Drawing::Point(268, 32);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(30, 31);
-			this->label3->TabIndex = 0;
-			this->label3->Text = L"0";
-			this->label3->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->score->Location = System::Drawing::Point(268, 32);
+			this->score->Name = L"score";
+			this->score->Size = System::Drawing::Size(30, 31);
+			this->score->TabIndex = 0;
+			this->score->Text = L"0";
+			this->score->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			// 
 			// label4
 			// 
@@ -150,7 +151,7 @@ namespace WindowsFormApplication1 {
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label4);
-			this->Controls->Add(this->label3);
+			this->Controls->Add(this->score);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Name = L"Form1";
@@ -187,7 +188,7 @@ namespace WindowsFormApplication1 {
 			block_timer->Interval = 4000;
 			block_timer->Tick += gcnew EventHandler(this, &Form1::block_creator);
 			block_timer->Start();
-
+			
 
 
 	
@@ -209,6 +210,8 @@ private: System::Void timer_tick(Object^ sender, EventArgs^ e)
 	{
 		block[i]->y(5);
 	}
+	colisions();
+	checkwin();
 }
 private:System::Void block_creator(Object^ sender, EventArgs^ e)
 {
@@ -216,7 +219,56 @@ private:System::Void block_creator(Object^ sender, EventArgs^ e)
 	block.Add(gcnew Block(GameWindow->Width, GameWindow->Height, resources));
 	GameWindow->Controls->Add(block[block.Count-1]->getPic());
 }
+private:System::Void colisions(void)
+{
+	int bY, bX, bSY, bSX;
+	int pY = player->y(),
+		pX = player->x(),
+		pSY = player->sizeY(),
+		pSX = player->sizeX();
+	for (int i = 0; i < block.Count; i++)
+	{
+		bY = block[i]->y();
+		bX = block[i]->x();
+		bSY = block[i]->sizeY();
+		bSX = block[i]->sizeX();
+		if (block[i]->y() > GameWindow->Height)
+		{
+			GameWindow->Controls->Remove(block[i]->getPic());
+			block.RemoveAt(i);
+			i--;
+			player->lfs(-1);
+			this->label4->Text = player->lfs().ToString();
+		}
+		if (((bY + bSY < pY + pSY &&  bY + bSY>pY)  && (bX + bSX <pX + pSX && bX+bSX>pX)) ||
+			((bY>pY && bY<pY + pSY) && (bX>pX && bX<pX + pSX))   )
+		{
+			GameWindow->Controls->Remove(block[i]->getPic());
+			block.RemoveAt(i);
+			i--;
+			player->pts(5);
+			this->score->Text = player->pts().ToString();
+		}
+		
+	}
+}
+private:System::Void checkwin()
+{
+	if (player->pts() >= 50)
+	{
+		timer->Stop();
+		MessageBox::Show("Wygrana", "Super");
+		Close();
 
+	}
+	if (player->lfs() <= 0)
+	{
+		timer->Stop();
+		MessageBox::Show("Przegrana", "Koniec");
+		Close();
+
+	}
+}
 #pragma endregion
 };
 }
